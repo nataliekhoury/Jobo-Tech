@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-
+import InterviewMentorScreen from './src/screens/InterviewMentorScreen';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start on your app!</Text>
-      <StatusBar style="auto" />
+      {/* put the screen that you coded here */}
+      <InterviewMentorScreen/>
+      {/* <StatusBar style="auto" /> */}
     </View>
   );
 }
