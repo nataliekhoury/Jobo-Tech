@@ -1,0 +1,7 @@
+# Node modules
+Jobotech_frontend/node_modules/
+jobotech_backend/node_modules
+
+# Expo directories
+Jobotech_frontend/.expo/
+.DS_Store
