@@ -5,3 +5,6 @@ jobotech_backend/node_modules/
 # Expo directories
 Jobotech_frontend/.expo/
 .DS_Store
+
+#dist
+jobotech_backend/dist
