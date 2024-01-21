@@ -1,9 +1,13 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Post, Body } from '@nestjs/common';
+import { ChatService } from './chat.service';
+import { CreateChatDto } from './dto/create-chat.dto';
 
 @Controller('chat')
 export class ChatController {
-  @Get()
-  getChat(): string {
-    return 'This is the chat endpoint';
+  constructor(private readonly chatService: ChatService) {}
+
+  @Post()
+  create(@Body() createChatDto: CreateChatDto) {
+    return this.chatService.create(createChatDto);
   }
 }

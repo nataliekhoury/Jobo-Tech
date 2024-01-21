@@ -7,7 +7,7 @@ import { ChatModule } from './chat/chat.module';
 @Module({
   imports: 
   [
-    MongooseModule.forRoot('mongodb+srv://norhan308:JoboTech@cluster0.ginlzm6.mongodb.net/'),
+    MongooseModule.forRoot('mongodb+srv://norhan308:JoboTech@cluster0.ginlzm6.mongodb.net/JoboTech'),
     ChatModule
   ],
   controllers: [AppController],
