@@ -7,7 +7,7 @@ export class ChatController {
   constructor(private readonly chatService: ChatService) {}
 
   @Post()
-  create(@Body() createChatDto: CreateChatDto) {
-    return this.chatService.create(createChatDto);
+  create(@Body() dto: CreateChatDto) {
+    return this.chatService.create(dto);
   }
 }
