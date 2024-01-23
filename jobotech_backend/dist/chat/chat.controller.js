@@ -23,6 +23,9 @@ let ChatController = class ChatController {
     create(dto) {
         return this.chatService.create(dto);
     }
+    getMessages(id1, id2) {
+        return this.chatService.getMessages(id1, id2);
+    }
 };
 exports.ChatController = ChatController;
 __decorate([
@@ -32,6 +35,14 @@ __decorate([
     __metadata("design:paramtypes", [create_chat_dto_1.CreateChatDto]),
     __metadata("design:returntype", void 0)
 ], ChatController.prototype, "create", null);
+__decorate([
+    (0, common_1.Get)(':id1/:id2'),
+    __param(0, (0, common_1.Param)('id1')),
+    __param(1, (0, common_1.Param)('id2')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", void 0)
+], ChatController.prototype, "getMessages", null);
 exports.ChatController = ChatController = __decorate([
     (0, common_1.Controller)('chat'),
     __metadata("design:paramtypes", [chat_service_1.ChatService])

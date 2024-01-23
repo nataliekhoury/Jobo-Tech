@@ -29,4 +29,5 @@ export declare class ChatService {
     private readonly chatModel;
     constructor(chatModel: Model<Chat>);
     create(createChatDto: CreateChatDto): Promise<Chat>;
+    getMessages(id1: string, id2: string): Promise<Chat[]>;
 }
