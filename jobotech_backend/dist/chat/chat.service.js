@@ -25,6 +25,24 @@ let ChatService = class ChatService {
         const createdChat = new this.chatModel(createChatDto);
         return await createdChat.save();
     }
+    async getMessages(id1, id2) {
+        const messages = await this.chatModel.aggregate([
+            {
+                $match: {
+                    $or: [
+                        { from: id1, to: id2 },
+                        { from: id2, to: id1 }
+                    ]
+                }
+            },
+            {
+                $sort: {
+                    dateCreated: 1
+                }
+            }
+        ]).exec();
+        return messages;
+    }
 };
 exports.ChatService = ChatService;
 exports.ChatService = ChatService = __decorate([
