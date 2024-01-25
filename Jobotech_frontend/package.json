@@ -9,14 +9,31 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@nestjs/jwt": "^10.2.0",
+    "@nestjs/passport": "^10.0.3",
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native-stack": "^6.9.17",
     "axios": "^1.6.5",
     "expo": "~50.0.1",
+    "expo-image-picker": "~14.7.1",
     "expo-status-bar": "~1.11.1",
+    "mongoose": "^8.1.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
     "react": "18.2.0",
-    "react-native": "0.73.2"
+    "react-dom": "18.2.0",
+    "react-native": "0.73.2",
+    "react-native-autogrow-textinput": "^5.4.0",
+    "react-native-image-picker": "^7.1.0",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
+    "react-native-paper": "^5.12.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@types/passport-jwt": "^4.0.0",
+    "@types/passport-local": "^1.0.38"
   },
   "private": true
 }
