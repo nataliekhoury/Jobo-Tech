@@ -8,10 +8,14 @@ const ChatScreen = () => {
   useEffect(() => {
     const fetchMsg = async () => {
       try {
-        const response = await axios.get('http://10.0.0.47:3000/chat/1/2');
+        const ids = ["65afe503f4ccf4426a8e8128", "65b137ba66804e1de5649657"];
+
+        const response = await axios.get('http://192.168.207.242:3000/chat', {
+          params: { ids: ids }
+        });
+        console.log(response.data)
         setData(response.data);
-        console.log('Data:', response.data);
-      } catch (error) {
+        } catch (error) {
         console.error('Error fetching data!', error.message);
       }
     };

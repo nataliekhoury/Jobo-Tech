@@ -1,8 +1,10 @@
 import { ChatService } from './chat.service';
-import { CreateChatDto } from './dto/create-chat.dto';
+import { CreateChatDTO } from './dto/create-chat.dto';
+import { GetMessagesDTO } from './dto/get-messages.dto';
 export declare class ChatController {
     private readonly chatService;
     constructor(chatService: ChatService);
-    create(dto: CreateChatDto): Promise<import("./chat.schema").Chat>;
-    getMessages(id1: string, id2: string): Promise<import("./chat.schema").Chat[]>;
+    create(dto: CreateChatDTO): Promise<import("./chat.schema").Chat>;
+    getMessages(dto: GetMessagesDTO): Promise<import("./chat.schema").Chat[]>;
+    getMessagess(id1: string, id2: string): Promise<import("./chat.schema").Chat[]>;
 }

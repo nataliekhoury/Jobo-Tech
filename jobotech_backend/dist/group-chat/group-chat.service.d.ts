@@ -22,15 +22,11 @@
 /// <reference types="mongoose/types/validation" />
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
-import { Document, Types } from 'mongoose';
-export declare class Chat extends Document {
-    from: ChatMember;
-    to: ChatMember;
-    text: string;
-    dateCreated: Date;
+import { Model } from 'mongoose';
+import { GroupChat } from './group-chat.schema';
+import { CreateGroupChatDTO } from './dto/create-group-chat.dto';
+export declare class GroupChatService {
+    private readonly groupChatModel;
+    constructor(groupChatModel: Model<GroupChat>);
+    create(dto: CreateGroupChatDTO): Promise<GroupChat>;
 }
-export declare const ChatSchema: import("mongoose").Schema<Chat, import("mongoose").Model<Chat, any, any, any, Document<unknown, any, Chat> & Chat & {
-    _id: Types.ObjectId;
-}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, Chat, Document<unknown, {}, import("mongoose").FlatRecord<Chat>> & import("mongoose").FlatRecord<Chat> & {
-    _id: Types.ObjectId;
-}>;
