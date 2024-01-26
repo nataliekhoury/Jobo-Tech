@@ -16,6 +16,7 @@ exports.ChatController = void 0;
 const common_1 = require("@nestjs/common");
 const chat_service_1 = require("./chat.service");
 const create_chat_dto_1 = require("./dto/create-chat.dto");
+const get_messages_dto_1 = require("./dto/get-messages.dto");
 let ChatController = class ChatController {
     constructor(chatService) {
         this.chatService = chatService;
@@ -23,8 +24,12 @@ let ChatController = class ChatController {
     create(dto) {
         return this.chatService.create(dto);
     }
-    getMessages(id1, id2) {
-        return this.chatService.getMessages(id1, id2);
+    getMessages(dto) {
+        console.log(dto);
+        return this.chatService.getMessages(dto);
+    }
+    getMessagess(id1, id2) {
+        return this.chatService.getMessagess(id1, id2);
     }
 };
 exports.ChatController = ChatController;
@@ -32,9 +37,16 @@ __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_chat_dto_1.CreateChatDto]),
+    __metadata("design:paramtypes", [create_chat_dto_1.CreateChatDTO]),
     __metadata("design:returntype", void 0)
 ], ChatController.prototype, "create", null);
+__decorate([
+    (0, common_1.Get)(),
+    __param(0, (0, common_1.Query)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [get_messages_dto_1.GetMessagesDTO]),
+    __metadata("design:returntype", void 0)
+], ChatController.prototype, "getMessages", null);
 __decorate([
     (0, common_1.Get)(':id1/:id2'),
     __param(0, (0, common_1.Param)('id1')),
@@ -42,7 +54,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", void 0)
-], ChatController.prototype, "getMessages", null);
+], ChatController.prototype, "getMessagess", null);
 exports.ChatController = ChatController = __decorate([
     (0, common_1.Controller)('chat'),
     __metadata("design:paramtypes", [chat_service_1.ChatService])

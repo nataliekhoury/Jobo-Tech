@@ -6,25 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.GroupChatModule = void 0;
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
+const group_chat_controller_1 = require("./group-chat.controller");
+const group_chat_service_1 = require("./group-chat.service");
 const mongoose_1 = require("@nestjs/mongoose");
-const chat_module_1 = require("./chat/chat.module");
-const group_chat_module_1 = require("./group-chat/group-chat.module");
-let AppModule = class AppModule {
+const group_chat_schema_1 = require("./group-chat.schema");
+let GroupChatModule = class GroupChatModule {
 };
-exports.AppModule = AppModule;
-exports.AppModule = AppModule = __decorate([
+exports.GroupChatModule = GroupChatModule;
+exports.GroupChatModule = GroupChatModule = __decorate([
     (0, common_1.Module)({
-        imports: [
-            mongoose_1.MongooseModule.forRoot('mongodb+srv://norhan308:JoboTech@cluster0.ginlzm6.mongodb.net/JoboTech'),
-            chat_module_1.ChatModule,
-            group_chat_module_1.GroupChatModule
-        ],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        imports: [mongoose_1.MongooseModule.forFeature([{ name: group_chat_schema_1.GroupChat.name, schema: group_chat_schema_1.GroupChatSchema }])],
+        controllers: [group_chat_controller_1.GroupChatController],
+        providers: [group_chat_service_1.GroupChatService]
     })
-], AppModule);
-//# sourceMappingURL=app.module.js.map
+], GroupChatModule);
+//# sourceMappingURL=group-chat.module.js.map

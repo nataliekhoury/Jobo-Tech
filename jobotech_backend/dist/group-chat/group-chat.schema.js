@@ -9,30 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChatSchema = exports.Chat = void 0;
+exports.GroupChatSchema = exports.GroupChat = void 0;
 const mongoose_1 = require("mongoose");
 const mongoose_2 = require("@nestjs/mongoose");
-let Chat = class Chat extends mongoose_1.Document {
+let GroupChat = class GroupChat extends mongoose_1.Document {
 };
-exports.Chat = Chat;
-__decorate([
-    (0, mongoose_2.Prop)({ type: { role: String, id: mongoose_1.Types.ObjectId, _id: false } }),
-    __metadata("design:type", Object)
-], Chat.prototype, "from", void 0);
-__decorate([
-    (0, mongoose_2.Prop)({ type: { role: String, id: mongoose_1.Types.ObjectId, _id: false } }),
-    __metadata("design:type", Object)
-], Chat.prototype, "to", void 0);
+exports.GroupChat = GroupChat;
 __decorate([
     (0, mongoose_2.Prop)({ type: String }),
     __metadata("design:type", String)
-], Chat.prototype, "text", void 0);
+], GroupChat.prototype, "name", void 0);
+__decorate([
+    (0, mongoose_2.Prop)({ type: [Object] }),
+    __metadata("design:type", Array)
+], GroupChat.prototype, "members", void 0);
+__decorate([
+    (0, mongoose_2.Prop)({ default: false }),
+    __metadata("design:type", Boolean)
+], GroupChat.prototype, "deleted", void 0);
 __decorate([
     (0, mongoose_2.Prop)({ default: Date.now }),
     __metadata("design:type", Date)
-], Chat.prototype, "dateCreated", void 0);
-exports.Chat = Chat = __decorate([
+], GroupChat.prototype, "dateCreated", void 0);
+exports.GroupChat = GroupChat = __decorate([
     (0, mongoose_2.Schema)()
-], Chat);
-exports.ChatSchema = mongoose_2.SchemaFactory.createForClass(Chat);
-//# sourceMappingURL=chat.schema.js.map
+], GroupChat);
+exports.GroupChatSchema = mongoose_2.SchemaFactory.createForClass(GroupChat);
+//# sourceMappingURL=group-chat.schema.js.map

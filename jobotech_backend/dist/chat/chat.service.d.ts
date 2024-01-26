@@ -24,10 +24,20 @@
 /// <reference types="mongoose/types/inferschematype" />
 import { Model } from 'mongoose';
 import { Chat } from './chat.schema';
-import { CreateChatDto } from './dto/create-chat.dto';
+import { CreateChatDTO } from './dto/create-chat.dto';
+import { GetMessagesDTO } from './dto/get-messages.dto';
 export declare class ChatService {
     private readonly chatModel;
     constructor(chatModel: Model<Chat>);
-    create(createChatDto: CreateChatDto): Promise<Chat>;
-    getMessages(id1: string, id2: string): Promise<Chat[]>;
+    create(createChatDto: CreateChatDTO): Promise<Chat>;
+    createLookup(from: string, localField: string, foreignField: string, as: string): {
+        $lookup: {
+            from: string;
+            localField: string;
+            foreignField: string;
+            as: string;
+        };
+    };
+    getMessages(dto: GetMessagesDTO): Promise<Chat[]>;
+    getMessagess(id1: string, id2: string): Promise<Chat[]>;
 }
