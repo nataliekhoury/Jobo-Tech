@@ -19,3 +19,33 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+// 'import { AuthProvider } from './AuthContext'; // Update the path accordingly
+
+// const App = () => {
+//   return (
+//     <AuthProvider>
+//       <AppContent />
+//     </AuthProvider>
+//   );
+// };
+
+// const AppContent = () => {
+//   const { mentorId } = useAuth();
+
+//   return (
+//     <View style={styles.container}>
+//       <StudentsList mentorId={mentorId} />
+//     </View>
+//   );
+// };
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//   },
+// });
+
+// export default App;
