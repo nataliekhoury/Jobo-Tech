@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateChatDto = void 0;
-class CreateChatDto {
+exports.CreateChatDTO = void 0;
+class CreateChatDTO {
 }
-exports.CreateChatDto = CreateChatDto;
+exports.CreateChatDTO = CreateChatDTO;
 //# sourceMappingURL=create-chat.dto.js.map

@@ -12,6 +12,7 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const mongoose_1 = require("@nestjs/mongoose");
 const chat_module_1 = require("./chat/chat.module");
+const group_chat_module_1 = require("./group-chat/group-chat.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -19,7 +20,8 @@ exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
             mongoose_1.MongooseModule.forRoot('mongodb+srv://norhan308:JoboTech@cluster0.ginlzm6.mongodb.net/JoboTech'),
-            chat_module_1.ChatModule
+            chat_module_1.ChatModule,
+            group_chat_module_1.GroupChatModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

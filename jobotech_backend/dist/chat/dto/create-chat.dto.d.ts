@@ -1,5 +1,5 @@
-export declare class CreateChatDto {
-    from: string;
-    to: string;
+export declare class CreateChatDTO {
+    from: ChatMember;
+    to: ChatMember;
     text: string;
 }

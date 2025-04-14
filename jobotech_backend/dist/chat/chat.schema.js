@@ -16,12 +16,12 @@ let Chat = class Chat extends mongoose_1.Document {
 };
 exports.Chat = Chat;
 __decorate([
-    (0, mongoose_2.Prop)({ type: String }),
-    __metadata("design:type", String)
+    (0, mongoose_2.Prop)({ type: { role: String, id: mongoose_1.Types.ObjectId, _id: false } }),
+    __metadata("design:type", Object)
 ], Chat.prototype, "from", void 0);
 __decorate([
-    (0, mongoose_2.Prop)({ type: String }),
-    __metadata("design:type", String)
+    (0, mongoose_2.Prop)({ type: { role: String, id: mongoose_1.Types.ObjectId, _id: false } }),
+    __metadata("design:type", Object)
 ], Chat.prototype, "to", void 0);
 __decorate([
     (0, mongoose_2.Prop)({ type: String }),
